@@ -1,0 +1,31 @@
+<form>
+    <label>Row:-</label>
+    <input type="number" id="row">
+    <br><br>
+    <label>Colume:-</label>
+    <input type="number" id="colume">
+    <br><br>
+    <input type="button" value="Submit" onclick="save()">
+</form>
+<table border="1" id="root" cellpadding="25"></table>
+<script type="text/javascript">
+    let add = () => {
+        document.getElementById('row').value = '';
+        document.getElementById('colume').value = '';
+    }
+    let save = () => {
+        var rowno = document.getElementById('row').value;
+        var colno = document.getElementById('colume').value;
+        {
+            for (let row = 0; row < rowno; row++) {
+                let tr = document.createElement('tr');
+                for (let col = 0; col < colno; col++) {
+                    let td = document.createElement('td');
+                    tr.appendChild(td);
+                }
+                root.appendChild(tr);
+            }
+        }
+        add();
+    }
+</script>
